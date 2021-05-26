@@ -75,7 +75,7 @@ class Song_categoryitemsAdapter internal constructor(
 
     override fun onBindViewHolder(itemViewHolder: ItemViewHolder, i: Int) {
         val item = itemList[i]
-        val button1 = itemViewHolder.see
+        //val button1 = itemViewHolder.see
         itemViewHolder.bind(i, item, onButtonClickListener)
 
         if (i == 0) {
@@ -95,12 +95,11 @@ class Song_categoryitemsAdapter internal constructor(
             // Create sub item view adapter
             val subItemAdapter = CategoryTypesAdapter(
                 item.subItemList as List<CategoryTypes>,
-                onCategoryClickListener = onCategoryClickListener,
-                onCategoryImageClickListener = null
+                onCategoryClickListener = onCategoryClickListener
             )
             itemViewHolder.rvSubItem.layoutManager = layoutManager
             itemViewHolder.rvSubItem.adapter = subItemAdapter
-            itemViewHolder.rvSubItem.setRecycledViewPool(viewPool)
+            //itemViewHolder.rvSubItem.setRecycledViewPool(viewPool)
 
             Log.i(
                 "onBindViewHolder4",

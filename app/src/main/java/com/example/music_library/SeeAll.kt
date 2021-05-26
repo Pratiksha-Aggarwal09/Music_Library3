@@ -30,7 +30,7 @@ class SeeAll : AppCompatActivity() {
 
     private fun buildSubItemList():List<SubItem> {
         val subItemList = ArrayList<SubItem>()
-        for (i in 0..7)
+        for (i in 0..9)
         {
             val subItem = SubItem("Sub Item " + i, "Description " + i,R.drawable.cartoon)
             subItemList.add(subItem)

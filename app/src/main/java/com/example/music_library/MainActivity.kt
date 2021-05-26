@@ -88,14 +88,13 @@ class MainActivity : AppCompatActivity(), OnButtonClickListener, OnCategoryClick
         }
     }
 
-    /*override fun onCategoryImageClicked(position: Int) {
-        rvItem.smoothScrollToPosition(position+1)
-    }*/
-
     override fun onCategoryClicked(position: Int) {
-        Log.i("onCategoryClicked", "position = $position")
         rvItem.smoothScrollToPosition(position + 1)
     }
+
+    /*override fun onCategoryClicked(position: Int) {
+        rvItem.smoothScrollToPosition(position+1)
+    }*/
 
 
 }

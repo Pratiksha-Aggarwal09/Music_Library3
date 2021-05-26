@@ -16,8 +16,8 @@ class AllCategories : AppCompatActivity(),OnCategoryClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.categories)
         val rvItem : RecyclerView = findViewById(R.id.categoryimage)
-        val layoutManager = GridLayoutManager(this,3);
-        val itemAdapter = CategoryTypesAdapter(categoryItemList(), onCategoryClickListener = this, onCategoryImageClickListener = null)
+        val layoutManager = GridLayoutManager(this,3)
+        val itemAdapter = CategoryTypesAdapter(categoryItemList(), onCategoryClickListener = this)
         rvItem.setAdapter(itemAdapter)
         rvItem.setLayoutManager(layoutManager)
     }
