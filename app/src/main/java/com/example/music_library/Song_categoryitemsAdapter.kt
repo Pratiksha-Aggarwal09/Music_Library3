@@ -71,7 +71,7 @@ class Song_categoryitemsAdapter internal constructor(private val itemList: List<
 
     override fun onBindViewHolder(itemViewHolder: ItemViewHolder, i: Int) {
         val item = itemList[i]
-        val button1 = itemViewHolder.see
+        //val button1 = itemViewHolder.see
         itemViewHolder.bind(i, item, onButtonClickListener)
 
         if (i == 0) {
@@ -89,14 +89,14 @@ class Song_categoryitemsAdapter internal constructor(private val itemList: List<
             // layoutManager.initialPrefetchItemCount = item.subItemList.size
 
             // Create sub item view adapter
-            val subItemAdapter = CategoryTypesAdapter(item.subItemList as List<CategoryTypes>, onCategoryClickListener = null, onCategoryImageClickListener = null)
+            val subItemAdapter = CategoryTypesAdapter(item.subItemList as List<CategoryTypes>, onCategoryClickListener =null)
             itemViewHolder.rvSubItem.layoutManager = layoutManager
             itemViewHolder.rvSubItem.adapter = subItemAdapter
-            itemViewHolder.rvSubItem.setRecycledViewPool(viewPool)
+            //itemViewHolder.rvSubItem.setRecycledViewPool(viewPool)
 
 
         }
-        else{
+        else if(i>0){
         //val item = itemList[i]
         itemViewHolder.categoryTitle.text = item.itemTitle
         /*val button1 = itemViewHolder.see
