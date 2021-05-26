@@ -1,5 +1,6 @@
 package com.example.music_library
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,18 +39,22 @@ import androidx.recyclerview.widget.RecyclerView
     }
 }*/
 
-class SubitemAdapter internal constructor(private val subItemList: List<SubItem>) : RecyclerView.Adapter<SubitemAdapter.SubItemViewHolder>() {
+class SubitemAdapter internal constructor(private val subItemList: List<SubItem>) :
+    RecyclerView.Adapter<SubitemAdapter.SubItemViewHolder>() {
 
-    override fun onCreateViewHolder( viewGroup: ViewGroup, i: Int): SubItemViewHolder {
-        val view: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.subitem, viewGroup, false)
+    override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): SubItemViewHolder {
+        val view: View =
+            LayoutInflater.from(viewGroup.context).inflate(R.layout.subitem, viewGroup, false)
         return SubItemViewHolder(view)
     }
 
-    override fun onBindViewHolder( subItemViewHolder: SubItemViewHolder, i: Int) {
+    override fun onBindViewHolder(subItemViewHolder: SubItemViewHolder, i: Int) {
         val subItem = subItemList[i]
         subItemViewHolder.tvSubItemTitle.setText(subItem.subItemTitle)
         subItemViewHolder.tvsubItemDesc.setText(subItem.subItemDesc)
         subItemViewHolder.isongimage.setImageResource(subItem.subItemImage)
+
+        Log.i("onBindViewHolder5", "i= " + i + " || item = " + subItem.subItemTitle)
     }
 
     override fun getItemCount(): Int {
@@ -58,8 +63,8 @@ class SubitemAdapter internal constructor(private val subItemList: List<SubItem>
 
     inner class SubItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvSubItemTitle: TextView
-         var tvsubItemDesc :TextView
-         var isongimage:ImageView
+        var tvsubItemDesc: TextView
+        var isongimage: ImageView
 
         init {
             tvSubItemTitle = itemView.findViewById(R.id.songname)
